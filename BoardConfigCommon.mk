@@ -20,6 +20,8 @@ TARGET_CPU_SMP := true
 # Krait optimizations
 TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 
+TARGET_PREBUILT_KERNEL := $(COMMON_PATH)/kernel
+
 BOARD_KERNEL_SEPARATED_DT :=  true
 BOARD_KERNEL_CMDLINE := ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE        := 0x00000000
