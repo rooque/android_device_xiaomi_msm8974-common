@@ -111,8 +111,6 @@ TARGET_PROVIDES_POWERHAL := true
 
 include device/qcom/sepolicy/sepolicy.mk
 
-
-
 # Recovery:Start
 
 # Use this flag if the board has a ext4 partition larger than 2gb
