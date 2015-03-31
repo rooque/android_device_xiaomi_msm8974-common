@@ -19,26 +19,6 @@
 
 # Get the long list of APNs
 LOCAL_PATH := device/xiaomi/msm8974-common
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/sidnid-conf.xml:system/etc/sidnid-conf.xml
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf
-
-# Default Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=MI.ogg \
-    ro.config.notification_sound=FadeIn.ogg \
-    ro.config.alarm_alert=GoodMorning.ogg
-
-# Audio
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media/FadeIn.ogg:system/media/audio/notifications/FadeIn.ogg \
-    $(LOCAL_PATH)/media/FadeOut.ogg:system/media/audio/notifications/FadeOut.ogg \
-    $(LOCAL_PATH)/media/GoodMorning.ogg:system/media/audio/alarms/GoodMorning.ogg \
-    $(LOCAL_PATH)/media/MI.ogg:system/media/audio/ringtones/MI.ogg
-
-# include additional build utilities
--include $(LOCAL_PATH)/utils.mk
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)

@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifneq ($(filter cancro cancro_lte_ct virgo,$(TARGET_PRODUCT)),)
+ifneq ($(filter omni_cancro cancro cancro_lte_ct virgo,$(TARGET_PRODUCT)),)
 
 LOCAL_PATH := $(call my-dir)
 

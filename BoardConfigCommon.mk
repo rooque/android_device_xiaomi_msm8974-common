@@ -20,8 +20,6 @@ TARGET_CPU_SMP := true
 # Krait optimizations
 TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 
-TARGET_PREBUILT_KERNEL := $(COMMON_PATH)/kernel
-
 BOARD_KERNEL_SEPARATED_DT :=  true
 BOARD_KERNEL_CMDLINE := ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE        := 0x00000000
@@ -41,7 +39,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/kernel-headers
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP -DQCOM_MEDIA_DISABLE_BUFFER_SIZE_CHECK
 
 # Display
 TARGET_QCOM_DISPLAY_VARIANT := caf-bfam
@@ -76,7 +74,7 @@ USE_CUSTOM_AUDIO_POLICY := 0
 BOARD_USES_EXTN_AUDIO_POLICY_MANAGER := true
 
 # Camera
-COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DOPPO_CAMERA_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS #-DOPPO_CAMERA_HARDWARE
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Disable secure discard because it's SLOW
@@ -114,10 +112,14 @@ TARGET_PROVIDES_POWERHAL := true
 include device/qcom/sepolicy/sepolicy.mk
 
 # Recovery:Start
+TARGET_RECOVERY_FSTAB :=$(LOCAL_PATH)/twrp.fstap
+#TARGET_NO_RECOVERY := true
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
+
+
 
 # TWRP specific build flags
 DEVICE_RESOLUTION := 1080x1920

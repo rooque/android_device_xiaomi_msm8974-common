@@ -191,9 +191,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/system/etc/xtwifi.conf:system/etc/xtwifi.conf \
     $(LOCAL_PATH)/rootdir/system/etc/modem/Diag.cfg:system/etc/modem/Diag.cfg
 
-# Boot Animation
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip
+
 
 PRODUCT_PACKAGES += \
     audiod \
