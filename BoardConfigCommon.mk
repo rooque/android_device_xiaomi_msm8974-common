@@ -112,7 +112,7 @@ TARGET_PROVIDES_POWERHAL := true
 include device/qcom/sepolicy/sepolicy.mk
 
 # Recovery:Start
-TARGET_RECOVERY_FSTAB :=$(LOCAL_PATH)/twrp.fstap
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/twrp.fstab
 #TARGET_NO_RECOVERY := true
 
 # Use this flag if the board has a ext4 partition larger than 2gb
