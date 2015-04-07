@@ -18,6 +18,7 @@
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
 # Get the long list of APNs
+
 LOCAL_PATH := device/xiaomi/msm8974-common
 
 # Inherit from the common Open Source product configuration
