@@ -69,7 +69,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/root/init.qcom.usb.rc:root/init.qcom.usb.rc \
     $(LOCAL_PATH)/rootdir/root/init.qcom.usb.sh:root/init.qcom.usb.sh \
     $(LOCAL_PATH)/rootdir/root/init.target.rc:root/init.target.rc \
-    $(LOCAL_PATH)/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc
+    $(LOCAL_PATH)/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc \
+    $(LOCAL_PATH)/mount_ext4.sh:system/bin/mount_ext4.sh 
 
 # Audio
 PRODUCT_COPY_FILES += \
