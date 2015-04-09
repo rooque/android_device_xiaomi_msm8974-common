@@ -98,7 +98,13 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 
+# Audio/media
+TARGET_QCOM_AUDIO_VARIANT := caf-bfam
+TARGET_QCOM_MEDIA_VARIANT := caf-bfam
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
 # Graphics
+TARGET_QCOM_DISPLAY_VARIANT := caf-bfam
 BOARD_EGL_CFG := $(COMMON_PATH)/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
@@ -142,7 +148,8 @@ TARGET_NO_RPC := true
 TARGET_PROVIDES_GPS_LOC_API := true
 
 # Use HW crypto for ODE
-TARGET_HW_DISK_ENCRYPTION := true
+#TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
 
 # Enable CNE
 #BOARD_USES_QCNE := true
@@ -182,7 +189,6 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # selinux
 include device/qcom/sepolicy/sepolicy.mk
 
--include vendor/xiaomi/cancro/BoardConfigVendor.mk
 
 # TWRP specific build flags
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/twrp.fstab
