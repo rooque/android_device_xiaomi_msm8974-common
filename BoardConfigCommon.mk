@@ -182,7 +182,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # selinux
 include device/qcom/sepolicy/sepolicy.mk
 
-include vendor/xiaomi/cancro/BoardConfigVendor.mk
+-include vendor/xiaomi/cancro/BoardConfigVendor.mk
 
 # TWRP specific build flags
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/twrp.fstab
