@@ -191,7 +191,7 @@ include device/qcom/sepolicy/sepolicy.mk
 
 
 # TWRP specific build flags
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/root/recovery_fstab.qcom
 DEVICE_RESOLUTION := 1080x1920
 TW_THEME := portrait_hdpi
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
