@@ -122,9 +122,9 @@ TARGET_NO_RPC := true
 # Consumer IR
 TARGET_PROVIDES_CONSUMERIR_HAL := true
 
-# GPS HAL lives here
-#TARGET_GPS_HAL_PATH := $(COMMON_PATH)/gps
-#TARGET_PROVIDES_GPS_LOC_API := true
+# GPS
+TARGET_GPS_HAL_PATH := device/xiaomi/msm8974-common/gps
+TARGET_PROVIDES_GPS_LOC_API := true
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
