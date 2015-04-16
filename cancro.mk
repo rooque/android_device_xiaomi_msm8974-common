@@ -117,8 +117,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf \
     hostapd_default.conf \
-    hostapd.accept \
-    hostapd.deny
+    libwcnss_qmi
 
 # SoftAP
 PRODUCT_PACKAGES += \
@@ -310,11 +309,9 @@ PRODUCT_PACKAGES += \
     com.dsi.ant.antradio_library \
     libantradio
 
-#Bluetooth
+# Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bt.dev_power_class=1 \
     bluetooth.hfp.client=1 \
-    ro.bluetooth.alwaysbleon=true \
     qcom.bt.dev_power_class=1
 
 ifneq ($(QCPATH),)

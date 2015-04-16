@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,8 +14,22 @@
 # limitations under the License.
 #
 
+ifeq ($(PRODUCT_DEVICE),cancro)
+
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(PRODUCT_DEVICE),cancro)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := wcnss_xiaomi_client.c
+
+LOCAL_C_INCLUDES += hardware/qcom/wlan/wcnss_service
+LOCAL_CFLAGS += -Wall
+
+LOCAL_SHARED_LIBRARIES := libc libcutils libutils liblog libqminvapi
+
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE := libwcnss_qmi
+
+include $(BUILD_SHARED_LIBRARY)
+
 endif

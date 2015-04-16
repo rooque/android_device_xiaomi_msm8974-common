@@ -1,5 +1,3 @@
-USE_CAMERA_STUB := true
-
 BOARD_VENDOR := xiaomi
 
 COMMON_PATH := device/xiaomi/msm8974-common
@@ -25,8 +23,6 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
 
-# Flags
-COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 
 # Krait optimizations
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
@@ -48,48 +44,22 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
+# Power
 TARGET_POWERHAL_VARIANT := qcom
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(COMMON_PATH)/power/power_ext.c
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-TARGET_USES_QCOM_MM_AUDIO := true
-AUDIO_FEATURE_ENABLED_COMPRESS_CAPTURE := true
-AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
-AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
-AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
-AUDIO_FEATURE_ENABLED_EXTN_POST_PROC := true
-AUDIO_FEATURE_ENABLED_ANC_HEADSET := false
-AUDIO_FEATURE_ENABLED_FLUENCE := true
-AUDIO_FEATURE_ENABLED_HFP := true
-AUDIO_FEATURE_ENABLED_INCALL_MUSIC := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
-AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
-AUDIO_FEATURE_PCM_IOCTL_ENABLED := true
-AUDIO_FEATURE_ENABLED_PCM_OFFLOAD := true
-AUDIO_FEATURE_ENABLED_PCM_OFFLOAD_24 := true
-AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
-AUDIO_FEATURE_ENABLED_USBAUDIO := true
 AUDIO_FEATURE_ENABLED_FM := true
-AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
-BOARD_FORTEMEDIA_QDSP_ENABLED := true
-AUDIO_FEATURE_ENABLED_EXTN_RESAMPLER := true
-#QCOM_LISTEN_FEATURE := true
-#AUDIO_FEATURE_ENABLED_LISTEN :=true
-#DOLBY_DAP := true
-#DOLBY_DDP := true
-#DOLBY_UDC:= true
-#DOLBY_UDC_MULTICHANNEL:= true
-#DOLBY_UDC_STREAMING_HLS:= true
-BOARD_OMXCODEC_FFMPEG := true
 
 
 # Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/msm8974-common/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
-QCOM_BT_USE_SMD_TTY := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 
 # FM
 BOARD_HAVE_QCOM_FM := true
@@ -102,6 +72,8 @@ TARGET_LIBINIT_DEFINES_FILE := $(COMMON_PATH)/init/init_cancro.c
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
+USE_CAMERA_STUB := true
+BOARD_USES_LEGACY_MMAP := true
 
 # Audio/media
 TARGET_QCOM_AUDIO_VARIANT := caf-bfam
@@ -154,6 +126,9 @@ TARGET_PROVIDES_CONSUMERIR_HAL := true
 #TARGET_GPS_HAL_PATH := $(COMMON_PATH)/gps
 #TARGET_PROVIDES_GPS_LOC_API := true
 
+# Time services
+BOARD_USES_QC_TIME_SERVICES := true
+
 # Use HW crypto for ODE
 #TARGET_HW_DISK_ENCRYPTION := true
 TARGET_HW_DISK_ENCRYPTION := false
@@ -165,7 +140,8 @@ TARGET_HW_DISK_ENCRYPTION := false
 PROTOBUF_SUPPORTED := true
 
 # ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+#BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4         := true
@@ -182,11 +158,8 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 393216000
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 16384000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-
-
+# Misc
 BOARD_HAS_NO_SELECT_BUTTON := true
-
-TARGET_USES_LOGD := false
 
 # Compatibility with pre-kitkat Qualcomm sensor HALs
 SENSORS_NEED_SETRATE_ON_ENABLE := true
@@ -198,7 +171,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Disable secure discard because it's SLOW
 BOARD_SUPPRESS_SECURE_ERASE := true
 
-# selinux
+# Selinux
 include device/qcom/sepolicy/sepolicy.mk
 
 
@@ -206,6 +179,26 @@ BOARD_SEPOLICY_DIRS += \
         $(COMMON_PATH)/sepolicy
 
 
+BOARD_SEPOLICY_UNION += \
+    device.te \
+    file_contexts \
+    file.te \
+    healthd.te \
+    init_shell.te \
+    mediaserver.te \
+    mm-qcamerad.te \
+    mpdecision.te \
+    qseecomd.te \
+    rmt_storage.te \
+    sensors.te \
+    system_app.te \
+    system_server.te \
+    time_daemon.te \
+    thermal-engine.te \
+    vold.te \
+    wcnss_service.te
+    
+    
 # TWRP specific build flags
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/root/fstab.qcom
 RECOVERY_FSTAB_VERSION := 2
