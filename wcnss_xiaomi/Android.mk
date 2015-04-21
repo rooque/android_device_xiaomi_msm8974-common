@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-ifeq ($(PRODUCT_DEVICE),cancro)
-
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -32,4 +30,3 @@ LOCAL_MODULE := libwcnss_qmi
 
 include $(BUILD_SHARED_LIBRARY)
 
-endif
