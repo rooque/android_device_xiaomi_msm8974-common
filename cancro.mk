@@ -86,8 +86,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_3=""
 
 # Lights
-#PRODUCT_PACKAGES += \
-#   lights.msm8974
+PRODUCT_PACKAGES += \
+   lights.msm8974
 
 # Power
 PRODUCT_PACKAGES += \
@@ -116,8 +116,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf \
-    hostapd_default.conf \
-    libwcnss_qmi
+    hostapd_default.conf 
+#   libwcnss_qmi
 
 # SoftAP
 PRODUCT_PACKAGES += \
