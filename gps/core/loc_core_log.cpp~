@@ -34,6 +34,7 @@
 #include <log_util.h>
 #include <loc_core_log.h>
 
+#include <hardware/gps.h>
 
 void LocPosMode::logv() const
 {

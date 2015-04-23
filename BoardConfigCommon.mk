@@ -27,6 +27,9 @@ TARGET_CPU_VARIANT := krait
 # Krait optimizations
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
+# Flags
+COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
+
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.selinux=permissive androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 2048
@@ -46,8 +49,7 @@ TARGET_USES_QCOM_BSP := true
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Power
-TARGET_POWERHAL_VARIANT := qcom
-TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(COMMON_PATH)/power/power_ext.c
+TARGET_PROVIDES_POWERHAL := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -123,8 +125,8 @@ TARGET_NO_RPC := true
 TARGET_PROVIDES_CONSUMERIR_HAL := true
 
 # GPS
-#TARGET_GPS_HAL_PATH := device/xiaomi/msm8974-common/gps
-#TARGET_PROVIDES_GPS_LOC_API := true
+TARGET_GPS_HAL_PATH := device/xiaomi/msm8974-common/gps
+TARGET_PROVIDES_GPS_LOC_API := true
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
@@ -160,6 +162,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Misc
 BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
 
 # Compatibility with pre-kitkat Qualcomm sensor HALs
 SENSORS_NEED_SETRATE_ON_ENABLE := true
