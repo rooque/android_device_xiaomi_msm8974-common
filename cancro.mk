@@ -21,6 +21,10 @@ PRODUCT_COPY_FILES += \
 #Recovery
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/root/wait4sensorhub.sh:system/bin/wait4sensorhub.sh
+
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
