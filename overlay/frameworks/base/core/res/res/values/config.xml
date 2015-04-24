@@ -23,9 +23,6 @@
     <bool name="config_animateScreenLights">false</bool>
 
     <bool name="config_hotswapCapable">true</bool>
-    <!-- Does the notification LED support multiple colors?
-         Used to decide if the user can change the colors -->
-    <bool name="config_multiColorNotificationLed">true</bool>
 
     <!-- Default color for notification LED is white. -->
     <color name="config_defaultNotificationColor">#ffffffff</color>
@@ -138,7 +135,7 @@
     <integer name="config_screenBrightnessSettingDefault">100</integer>
     
     
-    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+
 
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
