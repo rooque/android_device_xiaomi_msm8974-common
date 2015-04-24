@@ -78,16 +78,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.izat.premium_enabled=1 \
     ro.qc.sdk.izat.service_mask=0x5
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rild.nitz_plmn="" \
-    persist.rild.nitz_long_ons_0="" \
-    persist.rild.nitz_long_ons_1="" \
-    persist.rild.nitz_long_ons_2="" \
-    persist.rild.nitz_long_ons_3="" \
-    persist.rild.nitz_short_ons_0="" \
-    persist.rild.nitz_short_ons_1="" \
-    persist.rild.nitz_short_ons_2="" \
-    persist.rild.nitz_short_ons_3=""
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    persist.rild.nitz_plmn="" \
+#    persist.rild.nitz_long_ons_0="" \
+#    persist.rild.nitz_long_ons_1="" \
+#    persist.rild.nitz_long_ons_2="" \
+#    persist.rild.nitz_long_ons_3="" \
+#    persist.rild.nitz_short_ons_0="" \
+#    persist.rild.nitz_short_ons_1="" \
+#    persist.rild.nitz_short_ons_2="" \
+#    persist.rild.nitz_short_ons_3=""
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -100,8 +100,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/changepowermode.sh:system/bin/changepowermode.sh
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.perf.cores_online=1
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.qualcomm.perf.cores_online=1
 
 # WiFi
 PRODUCT_COPY_FILES += \
@@ -120,7 +120,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf \
-    hostapd_default.conf 
+    hostapd_default.conf \
+    hostapd.accept \
+    hostapd.deny
 #   libwcnss_qmi
 
 # SoftAP
@@ -133,10 +135,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15 \
     wlan.driver.ath=0 \
-    ro.use_data_netmgrd=true \
-    persist.data.netmgrd.qos.enable=true \
-    persist.data.tcpackprio.enable=true \
-    ro.data.large_tcp_window_size=true
+    ro.use_data_netmgrd=true
 
 # IPC router config
 PRODUCT_COPY_FILES += \
@@ -222,7 +221,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     av.offload.enable=true \
     audio.offload.gapless.enabled=false \
     audio.offload.disable=1 \
-    use.dedicated.device.for.voip=false \
+#    use.dedicated.device.for.voip=false \
     use.voice.path.for.pcm.voip=true \
     media.aac_51_output_enabled=true \
     ro.qc.sdk.audio.ssr=false \
@@ -274,8 +273,8 @@ PRODUCT_PACKAGES += \
     liboverlay
 
 # power down SIM card when modem is sent to Low Power Mode.
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.apm_sim_not_pwdn=1
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    persist.radio.apm_sim_not_pwdn=1
 
 # Keystore
 PRODUCT_PACKAGES += \
@@ -292,8 +291,8 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    hw.fm.internal_antenna=true
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    hw.fm.internal_antenna=true
 
 # USB
 PRODUCT_PACKAGES += \
@@ -313,10 +312,11 @@ PRODUCT_PACKAGES += \
     com.dsi.ant.antradio_library \
     libantradio
 
-# Bluetooth
+#Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
+    qcom.bt.dev_power_class=1 \
     bluetooth.hfp.client=1 \
-    qcom.bt.dev_power_class=1
+    ro.bluetooth.alwaysbleon=true
 
 ifneq ($(QCPATH),)
 # proprietary wifi display, if available
@@ -338,13 +338,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
     dev.pm.dyn_samplingrate=1 \
     ro.opengles.version=196608 \
-    ril.subscription.types=NV,RUIM \
+    ril.subscription.types=RUIM \
     persist.omh.enabled=true \
     persist.sys.ssr.restart_level=3 \
     persist.timed.enable=true \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
-    persist.sys.media.use-awesome=true \
+    persist.stagefright.media.use-awesome=true \
     debug.mdpcomp.4k2kSplit=1
 
 # Permissions
