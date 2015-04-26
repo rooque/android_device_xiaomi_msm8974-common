@@ -103,15 +103,7 @@ config_bt ()
         setprop ro.qualcomm.bluetooth.map true
         setprop ro.qualcomm.bluetooth.nap true
         setprop ro.bluetooth.sap true
-        case $target in
-          "apq8084")
-              setprop ro.bluetooth.dun true
-              logi "Enabling BT-DUN for APQ8084"
-              ;;
-          *)
-              setprop ro.bluetooth.dun false
-              ;;
-        esac
+        setprop ro.bluetooth.dun false
         ;;
     "msm")
         setprop ro.qualcomm.bluetooth.opp true
@@ -167,6 +159,7 @@ config_bt ()
        elif [ "$btsoc" = "rome" ]
        then
            setprop ro.bluetooth.hfp.ver 1.6
+           setprop ro.bluetooth.dun true
        fi
        ;;
     *)
@@ -247,13 +240,6 @@ STACK=`getprop ro.qc.bluetooth.stack`
 # BR/EDR & LE power class configurations
 POWER_CLASS=`getprop qcom.bt.dev_power_class`
 LE_POWER_CLASS=`getprop qcom.bt.le_dev_pwr_class`
-
-HWVER=`getprop ro.boot.hwversion`
-case $HWVER in
-    3?)
-    POWER_CLASS=2
-    ;;
-esac
 
 #find the transport type
 TRANSPORT=`getprop ro.qualcomm.bt.hci_transport`
