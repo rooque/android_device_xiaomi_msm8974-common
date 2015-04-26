@@ -504,7 +504,7 @@ service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
-    group bluetooth net_bt_admin
+    group qcom_oncrpc bluetooth net_bt_admin system
     disabled
     oneshot
 
@@ -585,6 +585,12 @@ on property:ro.use_data_netmgrd=false
 # but only if ro.data.large_tcp_window_size property is set.
 on property:ro.data.large_tcp_window_size=true
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
+    
+ 
+-service battery_monitor /system/bin/battery_monitor
+    user system
+    group system
+    disabled 
 
 service p2p_supplicant /system/bin/wpa_supplicant \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
@@ -939,3 +945,9 @@ service sensorservice /system/bin/sensorservice
     user root
     group root
     disabled
+
+service wait4sensorhub /system/bin/wait4sensorhub.sh
+    class late_start
+    user root
+    group root
+    oneshot
