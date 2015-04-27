@@ -130,6 +130,7 @@ PRODUCT_PACKAGES += \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     wcnss_service
+    hci_qcomm_init
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
@@ -316,7 +317,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     qcom.bt.dev_power_class=1 \
     bluetooth.hfp.client=1 \
-    ro.bluetooth.alwaysbleon=true
+    ro.bluetooth.alwaysbleon=true \
+    
 
 ifneq ($(QCPATH),)
 # proprietary wifi display, if available
