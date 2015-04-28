@@ -100,8 +100,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/changepowermode.sh:system/bin/changepowermode.sh
 
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.qualcomm.perf.cores_online=1
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.perf.cores_online=1
 
 # WiFi
 PRODUCT_COPY_FILES += \
@@ -129,8 +129,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libqsap_sdk \
     libQWiFiSoftApCfg \
-    wcnss_service
-    hci_qcomm_init
+    wcnss_service 
+#    hci_qcomm_init
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
@@ -274,8 +274,8 @@ PRODUCT_PACKAGES += \
     liboverlay
 
 # power down SIM card when modem is sent to Low Power Mode.
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    persist.radio.apm_sim_not_pwdn=1
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.apm_sim_not_pwdn=1
 
 # Keystore
 PRODUCT_PACKAGES += \
@@ -292,8 +292,8 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    hw.fm.internal_antenna=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    hw.fm.internal_antenna=true
 
 # USB
 PRODUCT_PACKAGES += \
@@ -317,7 +317,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     qcom.bt.dev_power_class=1 \
     bluetooth.hfp.client=1 \
-    ro.bluetooth.alwaysbleon=true \
+    ro.bluetooth.alwaysbleon=true 
     
 
 ifneq ($(QCPATH),)
@@ -340,7 +340,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
     dev.pm.dyn_samplingrate=1 \
     ro.opengles.version=196608 \
-    ril.subscription.types=RUIM \
+    ril.subscription.types=NV,RUIM \
     persist.omh.enabled=true \
     persist.sys.ssr.restart_level=3 \
     persist.timed.enable=true \
