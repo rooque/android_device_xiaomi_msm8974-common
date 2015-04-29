@@ -854,8 +854,10 @@ service fastmmisrv /system/bin/sh /init.qcom.factory.sh
 on ffbm
     start fastmmisrv
 
-service charger /charger
+service charger /sbin/healthd -c
     class charger
+    critical
+    seclabel u:r:healthd:s0
 
 service hvdcp /system/bin/hvdcp
     class core
@@ -907,7 +909,7 @@ on property:persist.radio.ramdump_sdcard=1
 
 on property:service.bootanim.exit=1
     setprop sys.perf.profile 1
-    start mpdecision
+    #start mpdecision
 
 #To enalbe fast dormancy for CU
 on property:persist.radio.modem=LTE-CU
