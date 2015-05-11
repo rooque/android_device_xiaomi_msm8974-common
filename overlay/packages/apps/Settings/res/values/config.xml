@@ -15,4 +15,9 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Volume Rocker Wake -->
+    <bool name="config_show_volumeRockerWake">true</bool>
+
+    <!-- Home Button Wake -->
+    <bool name="config_show_homeWake">true</bool>
 </resources>
