@@ -110,7 +110,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_x4.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_x4.bin \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_x4lte.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_x4lte.bin \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_x5.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_x5.bin
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_x5.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_x5.bin \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_x5gbl.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_x5gbl.bin
 
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
@@ -238,7 +239,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     av.offload.enable=true \
     audio.offload.gapless.enabled=false \
     audio.offload.disable=1 \
-#    use.dedicated.device.for.voip=false \
+    use.dedicated.device.for.voip=false \
     use.voice.path.for.pcm.voip=true \
     media.aac_51_output_enabled=true \
     ro.qc.sdk.audio.ssr=false \
