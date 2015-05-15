@@ -73,9 +73,8 @@ BOARD_HAVE_QCOM_FM := true
 QCOM_FM_ENABLED := true
 
 # Vendor Init
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := $(COMMON_PATH)/init/init_cancro.c
+TARGET_INIT_VENDOR_LIB := libinit_cancro
+
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -137,11 +136,11 @@ TARGET_PROVIDES_GPS_LOC_API := true
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Use HW crypto for ODE
-TARGET_HW_DISK_ENCRYPTION := true
-#TARGET_HW_DISK_ENCRYPTION := false
+#TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
 
 # Enable CNE
-BOARD_USES_QCNE := true
+#BOARD_USES_QCNE := true
 
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
@@ -172,7 +171,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 EXTENDED_FONT_FOOTPRINT := true
 
 # Compatibility with pre-kitkat Qualcomm sensor HALs
-#SENSORS_NEED_SETRATE_ON_ENABLE := true
+SENSORS_NEED_SETRATE_ON_ENABLE := true
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true

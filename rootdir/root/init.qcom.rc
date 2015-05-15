@@ -343,6 +343,14 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
+    # Adjust vibrator amplitude
+    write /sys/class/timed_output/vibrator/amp 95
+
+    # Hardware tunables
+    chown root system /sys/class/timed_output/vibrator/amp
+    chmod 0664 /sys/class/timed_output/vibrator/amp
+    restorecon /sys/class/timed_output/vibrator/amp
+
 on charger
     wait /dev/block/platform/msm_sdcc.1/by-name/system
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system wait ro barrier=1
@@ -854,10 +862,8 @@ service fastmmisrv /system/bin/sh /init.qcom.factory.sh
 on ffbm
     start fastmmisrv
 
-service charger /sbin/healthd -c
+service charger /charger
     class charger
-    critical
-    seclabel u:r:healthd:s0
 
 service hvdcp /system/bin/hvdcp
     class core
@@ -878,7 +884,6 @@ service charger_monitor /system/bin/charger_monitor
 service qbcharger /charger -m 1
     disabled
     oneshot
-    seclabel u:r:healthd:s0
 
 on property:sys.qbcharger.enable=true
     start qbcharger
@@ -910,7 +915,7 @@ on property:persist.radio.ramdump_sdcard=1
 
 on property:service.bootanim.exit=1
     setprop sys.perf.profile 1
-    #start mpdecision
+    start mpdecision
 
 #To enalbe fast dormancy for CU
 on property:persist.radio.modem=LTE-CU
