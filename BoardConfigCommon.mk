@@ -20,7 +20,7 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-#TARGET_CPU_SMP := true
+TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
 
 
@@ -28,7 +28,7 @@ TARGET_CPU_VARIANT := krait
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Flags
-#COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
+COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 vmalloc=340M androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_BASE        := 0x00000000
@@ -73,7 +73,7 @@ BOARD_HAVE_QCOM_FM := true
 QCOM_FM_ENABLED := true
 
 # Vendor Init
-#TARGET_UNIFIED_DEVICE := true
+TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := $(COMMON_PATH)/init/init_cancro.c
 
@@ -137,11 +137,11 @@ TARGET_PROVIDES_GPS_LOC_API := true
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Use HW crypto for ODE
-#TARGET_HW_DISK_ENCRYPTION := true
-TARGET_HW_DISK_ENCRYPTION := false
+TARGET_HW_DISK_ENCRYPTION := true
+#TARGET_HW_DISK_ENCRYPTION := false
 
 # Enable CNE
-#BOARD_USES_QCNE := true
+BOARD_USES_QCNE := true
 
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
