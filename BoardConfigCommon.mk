@@ -30,7 +30,7 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 # Flags
 COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 vmalloc=340M androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 vmalloc=340M androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
@@ -73,7 +73,10 @@ BOARD_HAVE_QCOM_FM := true
 QCOM_FM_ENABLED := true
 
 # Vendor Init
-TARGET_INIT_VENDOR_LIB := libinit_cancro
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := device/xiaomi/msm8974-common/init/init_cancro.c
+
 
 
 # Camera
@@ -171,7 +174,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 EXTENDED_FONT_FOOTPRINT := true
 
 # Compatibility with pre-kitkat Qualcomm sensor HALs
-SENSORS_NEED_SETRATE_ON_ENABLE := true
+#SENSORS_NEED_SETRATE_ON_ENABLE := true
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
