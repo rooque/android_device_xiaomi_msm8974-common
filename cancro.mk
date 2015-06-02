@@ -74,8 +74,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
-#    persist.gps.qc_nlp_in_use=1 \
-#    persist.loc.nlp_name=com.qualcomm.services.location \
+    persist.gps.qc_nlp_in_use=1 \
+    persist.loc.nlp_name=com.qualcomm.services.location \
     ro.gps.agps_provider=1 \
     ro.qc.sdk.izat.premium_enabled=1 \
     ro.qc.sdk.izat.service_mask=0x5
@@ -332,10 +332,10 @@ PRODUCT_PACKAGES += \
     libbson
 
 # ANT+
-PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library \
-    libantradio
+#PRODUCT_PACKAGES += \
+#    AntHalService \
+#    com.dsi.ant.antradio_library \
+#    libantradio
 
 #Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -371,6 +371,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
     debug.mdpcomp.4k2kSplit=1
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.ltm_enable=true \
+    assertdisplay.value=128 \
+    persist.sys.gamut_mode=0
 
 # Permissions
 PRODUCT_COPY_FILES += \
