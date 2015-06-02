@@ -18,6 +18,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     CancroParts
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8974
+
 # Charger
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/root/chargeonlymode:root/sbin/chargeonlymode
