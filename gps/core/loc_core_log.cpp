@@ -34,7 +34,6 @@
 #include <log_util.h>
 #include <loc_core_log.h>
 
-
 void LocPosMode::logv() const
 {
     LOC_LOGV ("Position mode: %s\n  Position recurrence: %s\n  "
