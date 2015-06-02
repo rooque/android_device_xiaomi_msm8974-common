@@ -14,6 +14,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp \
     camera2.portability.force_api=1
 
+# CancroParts
+PRODUCT_PACKAGES += \
+    CancroParts
+
 # Charger
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/root/chargeonlymode:root/sbin/chargeonlymode
@@ -53,12 +57,6 @@ PRODUCT_PACKAGES += \
     qca6234-service.sh \
     usf_post_boot.sh
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/mount_ext4.sh:system/bin/mount_ext4.sh \
-    $(LOCAL_PATH)/rootdir/root/e2fsck_static:root/sbin/e2fsck_static
-
-#PRODUCT_PACKAGES += \
-#    dualboot_init
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -72,22 +70,22 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.gps.qc_nlp_in_use=1 \
-    persist.loc.nlp_name=com.qualcomm.services.location \
+#    persist.gps.qc_nlp_in_use=1 \
+#    persist.loc.nlp_name=com.qualcomm.services.location \
     ro.gps.agps_provider=1 \
     ro.qc.sdk.izat.premium_enabled=1 \
     ro.qc.sdk.izat.service_mask=0x5
 
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    persist.rild.nitz_plmn="" \
-#    persist.rild.nitz_long_ons_0="" \
-#    persist.rild.nitz_long_ons_1="" \
-#    persist.rild.nitz_long_ons_2="" \
-#    persist.rild.nitz_long_ons_3="" \
-#    persist.rild.nitz_short_ons_0="" \
-#    persist.rild.nitz_short_ons_1="" \
-#    persist.rild.nitz_short_ons_2="" \
-#    persist.rild.nitz_short_ons_3=""
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.rild.nitz_plmn="" \
+    persist.rild.nitz_long_ons_0="" \
+    persist.rild.nitz_long_ons_1="" \
+    persist.rild.nitz_long_ons_2="" \
+    persist.rild.nitz_long_ons_3="" \
+    persist.rild.nitz_short_ons_0="" \
+    persist.rild.nitz_short_ons_1="" \
+    persist.rild.nitz_short_ons_2="" \
+    persist.rild.nitz_short_ons_3=""
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -312,6 +310,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     hw.fm.internal_antenna=true
 
+# Enable Adaptive Multi-Rate Wideband
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ril.enable.amr.wideband=1
+
+
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
@@ -363,7 +366,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
-    persist.sys.media.use-awesome=true \
     debug.mdpcomp.4k2kSplit=1
 
 # Permissions
