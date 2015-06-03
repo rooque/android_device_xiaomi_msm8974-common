@@ -65,12 +65,16 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_SMD_TTY := true
 BLUETOOTH_HCI_USE_MCT := true
-#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
+
+# FM
+BOARD_HAVE_QCOM_FM := true
+QCOM_FM_ENABLED := true
 
 # Vendor Init
 #TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/xiaomi/msm8974-common/init/init_cancro.c
+#TARGET_LIBINIT_DEFINES_FILE := device/xiaomi/msm8974-common/init/init_cancro.c
 
 
 
