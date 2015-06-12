@@ -81,7 +81,7 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 USE_CAMERA_STUB := true
-BOARD_USES_LEGACY_MMAP := true
+#BOARD_USES_LEGACY_MMAP := true
 
 # Audio/media
 TARGET_QCOM_AUDIO_VARIANT := caf-bfam
@@ -190,24 +190,24 @@ BOARD_SEPOLICY_DIRS += \
         $(COMMON_PATH)/sepolicy
 
 
-BOARD_SEPOLICY_UNION += \
-    device.te \
-    file_contexts \
-    file.te \
-    healthd.te \
-    init_shell.te \
-    mediaserver.te \
-    mm-qcamerad.te \
-    mpdecision.te \
-    qseecomd.te \
-    rmt_storage.te \
-    sensors.te \
-    system_app.te \
-    system_server.te \
-    time_daemon.te \
-    thermal-engine.te \
-    vold.te \
-    wcnss_service.te
+#BOARD_SEPOLICY_UNION += \
+#    device.te \
+#    file_contexts \
+#    file.te \
+#    healthd.te \
+#    init_shell.te \
+#    mediaserver.te \
+#    mm-qcamerad.te \
+#    mpdecision.te \
+#    qseecomd.te \
+#    rmt_storage.te \
+#    sensors.te \
+#    system_app.te \
+#    system_server.te \
+#    time_daemon.te \
+#    thermal-engine.te \
+#    vold.te \
+#    wcnss_service.te
     
     
 # TWRP specific build flags
