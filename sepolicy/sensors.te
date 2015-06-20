@@ -1,2 +1,7 @@
-allow sensors apk_data_file:sock_file create_file_perms;
-allow sensors apk_data_file:dir create_dir_perms;
+### OmniRom Cancro SEPolicy
+allow sensors init:unix_stream_socket connectto;
+allow sensors persist_file:file { read write getattr open setattr };
+allow sensors property_socket:sock_file write;
+allow sensors system_data_file:file open;
+
+

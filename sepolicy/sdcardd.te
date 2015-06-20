@@ -1,0 +1,5 @@
+### OmniRom Cancro SEPolicy
+#allow sdcardd unlabeled:dir { read getattr open };
+#allow sdcardd unlabeled:file { read getattr open };
+# This should be wrong
+

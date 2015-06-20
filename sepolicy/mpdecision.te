@@ -1,3 +1,4 @@
-allow mpdecision socket_device:dir { write add_name remove_name };
-allow mpdecision socket_device:sock_file { create setattr write unlink };
-allow mpdecision system_data_file:file { open append };
+### OmniRom Cancro SEPolicy
+allow mpdecision sysfs_thermal:file { write open read };
+allow mpdecision system_data_file:dir add_name;
+allow mpdecision system_data_file:file create;

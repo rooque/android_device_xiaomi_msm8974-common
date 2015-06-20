@@ -1,0 +1,2 @@
+### OmniRom Cancro SEPolicy
+allow wpa device:chr_file { read open };

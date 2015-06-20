@@ -1,0 +1,4 @@
+### OmniRom Cancro SEPolicy
+allow location apk_data_file:sock_file { read write };
+
+
