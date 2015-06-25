@@ -72,10 +72,8 @@ BOARD_HAVE_QCOM_FM := true
 QCOM_FM_ENABLED := true
 
 # Vendor Init
-#TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-#TARGET_LIBINIT_DEFINES_FILE := device/xiaomi/msm8974-common/init/init_cancro.c
-
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_cancro
 
 
 # Camera
@@ -86,6 +84,7 @@ USE_CAMERA_STUB := true
 # Blob compatibility
 BOARD_USES_LEGACY_MMAP := true
 #TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
+
 
 # Audio/media
 TARGET_QCOM_AUDIO_VARIANT := caf-bfam
