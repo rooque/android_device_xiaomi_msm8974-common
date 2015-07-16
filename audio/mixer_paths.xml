@@ -26,13 +26,13 @@
     <ctl name="LINEOUT4 Volume" value="12" />
     <ctl name="HPHL Volume" value="20" />
     <ctl name="HPHR Volume" value="20" />
-    <ctl name="RX1 Digital Volume" value="84" />
-    <ctl name="RX2 Digital Volume" value="84" />
-    <ctl name="RX3 Digital Volume" value="84" />
-    <ctl name="RX4 Digital Volume" value="84" />
-    <ctl name="RX5 Digital Volume" value="84" />
-    <ctl name="RX6 Digital Volume" value="84" />
-    <ctl name="RX7 Digital Volume" value="84" />
+    <ctl name="RX1 Digital Volume" value="80" />
+    <ctl name="RX2 Digital Volume" value="80" />
+    <ctl name="RX3 Digital Volume" value="80" />
+    <ctl name="RX4 Digital Volume" value="80" />
+    <ctl name="RX5 Digital Volume" value="80" />
+    <ctl name="RX6 Digital Volume" value="80" />
+    <ctl name="RX7 Digital Volume" value="80" />
     <ctl name="ADC1 Volume" value="12" />
     <ctl name="ADC2 Volume" value="12" />
     <ctl name="ADC3 Volume" value="12" />
@@ -807,8 +807,8 @@
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX7 MIX1 INP1" value="RX1" />
         <ctl name="COMP0 Switch" value="1" />
-        <ctl name="RX7 Digital Volume" value="84" />
-        <ctl name="SPK DRV Volume" value="8" />
+        <ctl name="RX7 Digital Volume" value="80" />
+        <ctl name="SPK DRV Volume" value="7" />
     </path>
 
     <path name="speaker-fluid">
@@ -884,8 +884,8 @@
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX7 MIX1 INP1" value="RX1" />
         <ctl name="COMP0 Switch" value="1" />
-        <ctl name="RX7 Digital Volume" value="84" />
-        <ctl name="SPK DRV Volume" value="8" />
+        <ctl name="RX7 Digital Volume" value="80" />
+        <ctl name="SPK DRV Volume" value="7" />
     </path>
 
     <path name="vi-feedback">
@@ -998,9 +998,9 @@
         <path name="headphones" />
         <ctl name="RX7 MIX1 INP1" value="RX1" />
         <ctl name="COMP0 Switch" value="1" />
-        <ctl name="RX7 Digital Volume" value="84" />
+        <ctl name="RX7 Digital Volume" value="82" />
         <ctl name="SPK DRV Volume" value="8" />
-        <ctl name="TI PA Gain" value="19" />
+        <ctl name="TI PA Gain" value="17" />
     </path>
 
     <path name="speaker-and-headphones-fluid">
