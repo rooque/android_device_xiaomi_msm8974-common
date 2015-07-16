@@ -104,7 +104,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/changepowermode.sh:system/bin/changepowermode.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.perf.cores_online=1
+    ro.qualcomm.perf.cores_online=2
 
 # WiFi
 PRODUCT_COPY_FILES += \
@@ -170,27 +170,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/listen_platform_info.xml:system/etc/listen_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X3/MTP_X3_Bluetooth_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Bluetooth_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X3/MTP_X3_General_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_General_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X3/MTP_X3_Global_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Global_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X3/MTP_X3_Handset_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Handset_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X3/MTP_X3_Hdmi_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Hdmi_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X3/MTP_X3_Headset_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Headset_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X3/MTP_X3_Speaker_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Speaker_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X4/MTP_X4_Bluetooth_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Bluetooth_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X4/MTP_X4_General_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_General_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X4/MTP_X4_Global_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Global_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X4/MTP_X4_Handset_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Handset_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X4/MTP_X4_Hdmi_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Hdmi_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X4/MTP_X4_Headset_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Headset_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X4/MTP_X4_Speaker_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Speaker_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X5/MTP_X5_Bluetooth_cal.acdb:system/etc/acdbdata/MTP/X5/MTP_X5_Bluetooth_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X5/MTP_X5_General_cal.acdb:system/etc/acdbdata/MTP/X5/MTP_X5_General_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X5/MTP_X5_Global_cal.acdb:system/etc/acdbdata/MTP/X5/MTP_X5_Global_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X5/MTP_X5_Handset_cal.acdb:system/etc/acdbdata/MTP/X5/MTP_X5_Handset_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X5/MTP_X5_Hdmi_cal.acdb:system/etc/acdbdata/MTP/X5/MTP_X5_Hdmi_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X5/MTP_X5_Headset_cal.acdb:system/etc/acdbdata/MTP/X5/MTP_X5_Headset_cal.acdb \
-    $(LOCAL_PATH)/rootdir/etc/acdbdata/MTP/X5/MTP_X5_Speaker_cal.acdb:system/etc/acdbdata/MTP/X5/MTP_X5_Speaker_cal.acdb
+    $(LOCAL_PATH)/audio/acdb/MTP/MTP_Bluetooth_cal.acdb:system/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP/MTP_General_cal.acdb:system/etc/acdbdata/MTP/MTP_General_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP/MTP_Global_cal.acdb:system/etc/acdbdata/MTP/MTP_Global_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP/MTP_Handset_cal.acdb:system/etc/acdbdata/MTP/MTP_Handset_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP/MTP_Hdmi_cal.acdb:system/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP/MTP_Headset_cal.acdb:system/etc/acdbdata/MTP/MTP_Headset_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP/MTP_Speaker_cal.acdb:system/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+
 
 
 # Media profile
@@ -253,24 +240,25 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.pcm.enable=false
 
 #Enable more sensor
-#    ro.qualcomm.sensors.qmd=true \
-#    ro.qualcomm.sensors.smd=true \
-#    ro.qualcomm.sensors.cmc=true \
-#    ro.qualcomm.sensors.vmd=true \
-#    ro.qualcomm.sensors.gtap=true \
-#    ro.qualcomm.sensors.pedometer=true \
-#    ro.qualcomm.sensors.pam=true \
-#    ro.qualcomm.sensors.scrn_ortn=true \
-#    ro.qualcomm.sensors.georv=true \
-#    ro.qualcomm.sensors.game_rv=true \
-#    ro.qc.sensors.step_detector=true \
-#    ro.qc.sensors.step_counter=true \
-#    ro.qc.sensors.max_geomag_rotvec=true \
-
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.qualcomm.sns.hal=w \
-    debug.qualcomm.sns.daemon=w \
-    debug.qualcomm.sns.libsensor1=w
+    ro.qualcomm.sensors.qmd=true \
+    ro.qualcomm.sensors.smd=true \
+    ro.qualcomm.sensors.cmc=true \
+    ro.qualcomm.sensors.vmd=true \
+    ro.qualcomm.sensors.gtap=true \
+    ro.qualcomm.sensors.pedometer=true \
+    ro.qualcomm.sensors.pam=true \
+    ro.qualcomm.sensors.scrn_ortn=true \
+    ro.qualcomm.sensors.georv=true \
+    ro.qualcomm.sensors.game_rv=true \
+    ro.qc.sensors.step_detector=true \
+    ro.qc.sensors.step_counter=true \
+    ro.qc.sensors.max_geomag_rotvec=true 
+
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    debug.qualcomm.sns.hal=w \
+#    debug.qualcomm.sns.daemon=w \
+#    debug.qualcomm.sns.libsensor1=w
 
 # aDSP
 PRODUCT_PROPERTY_OVERRIDES += \
